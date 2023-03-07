@@ -18,12 +18,14 @@ class complex:
         imag_part = self.imaginary - other.imaginary
         return complex(real_part, imag_part)
 
-    # TODO: fix
     def __mul__(self, other):
-        real_part = self.real * other.real
-        imag_part = self.imaginary * other.imaginary
+        real_part = (self.real * other.real) - (self.imag * other.imag)
+        imag_part = (self.real * other.imag) + (self.imag * other.real) 
         return complex(real_part, imag_part)
 
-    # TODO: 
     def __div__(self, other):
-        return complex()
+        real_part1 = (self.real * other.real) + (self.imag * other.imag)
+        imag_part1 = (self.imag * other.real) - (self.real * other.imag)
+        upon = (other.real)**2 + (other.imag)**2 
+        return f'{real_part1}/{upon} + {imag_part1}i/{upon} '
+    
