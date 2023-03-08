@@ -1,10 +1,10 @@
 from complex_numbers import *
 
-e = complex()
+e = Complex()
 print(e)
 
-a = complex(2, -1)
-b = complex(3, 4)
+a = Complex(2, -1)
+b = Complex(3, 4)
 
 print(a)
 print(b)
@@ -12,3 +12,4 @@ print(b)
 print(a + b)
 print(a - b)
 print(a * b)
+print(a / b)
