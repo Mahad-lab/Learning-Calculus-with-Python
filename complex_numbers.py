@@ -1,4 +1,4 @@
-class complex:
+class Complex:
     def __init__(self, real=0, imaginary=1):
         self.real = real
         self.imaginary = imaginary
@@ -11,21 +11,20 @@ class complex:
     def __add__(self, other):
         real_part = self.real + other.real
         imag_part = self.imaginary + other.imaginary
-        return complex(real_part, imag_part)
+        return Complex(real_part, imag_part)
 
     def __sub__(self, other):
         real_part = self.real - other.real
         imag_part = self.imaginary - other.imaginary
-        return complex(real_part, imag_part)
+        return Complex(real_part, imag_part)
 
     def __mul__(self, other):
-        real_part = (self.real * other.real) - (self.imag * other.imag)
-        imag_part = (self.real * other.imag) + (self.imag * other.real) 
-        return complex(real_part, imag_part)
+        real_part = (self.real * other.real) - (self.imaginary * other.imaginary)
+        imag_part = (self.real * other.imaginary) + (self.imaginary * other.real) 
+        return Complex(real_part, imag_part)
 
-    def __div__(self, other):
-        real_part1 = (self.real * other.real) + (self.imag * other.imag)
-        imag_part1 = (self.imag * other.real) - (self.real * other.imag)
-        upon = (other.real)**2 + (other.imag)**2 
-        return f'{real_part1}/{upon} + {imag_part1}i/{upon} '
-    
+    def __truediv__(self, other):
+        real_part = (self.real * other.real) + (self.imaginary * other.imaginary)
+        imag_part = (self.imaginary * other.real) - (self.real * other.imaginary)
+        upon = (other.real)**2 + (other.imaginary)**2
+        return f'{real_part}/{upon} + {imag_part}i/{upon} '
