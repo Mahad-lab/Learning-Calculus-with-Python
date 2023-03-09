@@ -33,4 +33,4 @@ class Complex:
         real_part = (self.real * other.real) + (self.imaginary * other.imaginary)
         imag_part = (self.imaginary * other.real) - (self.real * other.imaginary)
         upon = (other.real)**2 + (other.imaginary)**2
-        return f'{real_part}/{upon} + {imag_part}i/{upon} '
+        return f'{real_part} + {imag_part}i / {upon}'
